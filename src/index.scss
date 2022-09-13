@@ -1,0 +1,30 @@
+/* purgecss start ignore */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+.light {
+  .dark-light {
+    .icon-dark {
+      display: none;
+    }
+  }
+}
+
+.dark {
+  .dark-light {
+    .icon-light {
+      color: #fff;
+    }
+
+    .icon-light {
+      display: none;
+    }
+  }
+}
+
+.clip-area {
+  -webkit-clip-path: polygon(0 1%, 80% 0, 100% 100%, 18px 100%);
+  clip-path: polygon(0 1%, 80% 0, 100% 100%, 18px 100%);
+}

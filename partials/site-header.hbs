@@ -1,0 +1,35 @@
+<header class="relative border-b-4 border-sky-500 text-white bg-[#1a1f25]">
+  <div class="border-b-2 border-sky-500 py-2 px-5">
+    <div class="clip-area flex items-center gap-x-3 bg-[#121111] py-3 px-6 w-fit">
+      <a class="w-4 h-4" href="https://www.facebook.com/ghost" title="Facebook">
+          {{>icons/socials/facebook}}
+      </a>
+      <a class="w-4 h-4" href="https://twitter.com/ghost" title="Twitter">
+          {{>icons/socials/twitter}}
+      </a>
+      <a class="w-4 h-4" href="" title="LinkedIn">
+          {{>icons/socials/linkedin}}
+      </a>
+      <a class="w-4 h-4" href="" title="Pinterest">
+          {{>icons/socials/pinterest}}
+      </a>
+    </div>
+  </div>
+
+  <div>
+    {{#foreach navigation}}
+    <li>
+        <a class="nav-{{slug}} {{#if current}}active{{/if}}" href="{{url absolute=" true"}}" role="menuitem"
+            tabindex="-1">{{label}}</a>
+    </li>
+    {{/foreach}}
+  </div>
+  <div class="dark-light">
+    <div class="icon-dark cursor-pointer">
+      {{>icons/theme_dark}}
+    </div>
+    <div class="icon-light cursor-pointer">
+      {{>icons/theme_light}}
+    </div>
+  </div>
+</header>

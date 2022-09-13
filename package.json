@@ -1,0 +1,192 @@
+{
+  "name": "emagz",
+  "description": "Ghost theme using TailwindCSS and Webpack",
+  "demo": "https://www.prefinery.com/blog",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "scripts": {
+    "dev": "run-p -l package",
+    "build": "run-s -l clean package:prod zip",
+    "clean": "rm -rf assets/ theme.zip",
+    "package": "webpack --mode development --watch --env.NODE_ENV=development",
+    "package:prod": "webpack --mode production --env.NODE_ENV=production",
+    "zip": "zip -r theme.zip . -x@theme-exclude.lst",
+    "test": "gscan .",
+    "test:ci": "gscan --fatal --verbose ."
+  },
+  "author": {
+    "name": "Nguyen Tue Vuong",
+    "email": "nguyentuevuong@gmail.com",
+    "url": "https://nhanvuong.vn"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme",
+    "tailwind",
+    "tailwindcss",
+    "webpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbritten/Bermuda.git"
+  },
+  "bugs": "https://github.com/jbritten/Bermuda/issues",
+  "contributors": "https://github.com/jbritten/Bermuda/graphs/contributors",
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@tailwindcss/typography": "^0.5.7",
+    "@tryghost/release-utils": "0.8.1",
+    "alpinejs": "^2.4.1",
+    "autoprefixer": "9.7.6",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-prismjs": "^2.0.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "beeper": "2.0.0",
+    "clipboard": "^2.0.6",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.6.0",
+    "cssnano": "4.1.10",
+    "file-loader": "^6.0.0",
+    "gscan": "4.34.0",
+    "html-loader": "^1.1.0",
+    "inquirer": "7.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-easy-import": "3.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "prismjs": "^1.20.0",
+    "sass": "^1.54.9",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "tailwindcss": "^3.1.8",
+    "typeface-inter": "^3.12.0",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "config": {
+    "posts_per_page": 25,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    },
+    "card_assets": true,
+    "custom": {
+      "title_font": {
+        "type": "select",
+        "options": [
+          "Modern sans-serif",
+          "Elegant serif"
+        ],
+        "default": "Modern sans-serif"
+      },
+      "body_font": {
+        "type": "select",
+        "options": [
+          "Modern sans-serif",
+          "Elegant serif"
+        ],
+        "default": "Elegant serif"
+      },
+      "show_publication_cover": {
+        "type": "boolean",
+        "default": true,
+        "group": "homepage"
+      },
+      "header_style": {
+        "type": "select",
+        "options": [
+          "Center aligned",
+          "Left aligned",
+          "Hidden"
+        ],
+        "default": "Center aligned",
+        "group": "homepage"
+      },
+      "show_logo_in_navigation": {
+        "type": "boolean",
+        "default": false,
+        "group": "homepage"
+      },
+      "feed_layout": {
+        "type": "select",
+        "options": [
+          "Classic",
+          "Grid",
+          "List"
+        ],
+        "default": "Classic",
+        "group": "homepage"
+      },
+      "color_scheme": {
+        "type": "select",
+        "options": [
+          "Light",
+          "Dark",
+          "Auto"
+        ],
+        "default": "Light"
+      },
+      "post_image_style": {
+        "type": "select",
+        "options": [
+          "Wide",
+          "Full",
+          "Small",
+          "Hidden"
+        ],
+        "default": "Wide",
+        "group": "post"
+      },
+      "email_signup_text": {
+        "type": "text",
+        "default": "Sign up for more like this.",
+        "group": "post"
+      },
+      "show_recent_posts_footer": {
+        "type": "boolean",
+        "default": true,
+        "group": "post"
+      }
+    }
+  },
+  "renovate": {
+    "extends": [
+      "@tryghost:theme"
+    ]
+  }
+}
